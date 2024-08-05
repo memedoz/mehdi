@@ -1,0 +1,260 @@
+<html><head><base href="https://caloriequest.com/checkout?plan=essentiel">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalorieQuest - Paiement pour l'abonnement Essentiel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --accent-color: #F5A623;
+            --background-color: #F8F8F8;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .checkout-container {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .checkout-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-number {
+            flex-basis: 100%;
+        }
+
+        .card-expiry,
+        .card-cvc {
+            flex-basis: 48%;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .submit-btn:hover {
+            background-color: #3A80D2;
+            transform: translateY(-2px);
+        }
+
+        .order-summary {
+            flex: 0 0 350px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+        }
+
+        .order-summary h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #eee;
+            font-size: 1.2em;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .checkout-container {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            .order-summary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkout-container">
+            <header>
+                <h1>Finalisez votre abonnement Essentiel</h1>
+                <p>Vous êtes à un pas de débloquer votre potentiel fitness !</p>
+            </header>
+
+            <div class="hero-image"></div>
+
+            <div class="checkout-form">
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-number">Numéro de carte</label>
+                        <input type="text" id="card-number" name="card-number" required>
+                    </div>
+
+                    <div class="form-group card-details">
+                        <div class="card-expiry">
+                            <label for="card-expiry">Date d'expiration</label>
+                            <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA" required>
+                        </div>
+                        <div class="card-cvc">
+                            <label for="card-cvc">CVC</label>
+                            <input type="number" id="card-cvc" name="card-cvc" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Commencer mon voyage fitness</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <h2>Récapitulatif de votre abonnement</h2>
+            <div class="order-item">
+                <span>Abonnement Essentiel</span>
+                <span>29,00 € / mois</span>
+            </div>
+            <div class="order-item">
+                <span>Durée</span>
+                <span>1 mois</span>
+            </div>
+            <div class="order-item total">
+                <span>Total à payer aujourd'hui</span>
+                <span>29,00 €</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Ici, vous ajouteriez normalement la logique pour traiter le paiement
+            // Par exemple, en utilisant Stripe.js ou une autre API de paiement
+            alert('Paiement simulé réussi ! Bienvenue dans la famille CalorieQuest !');
+            // Redirection vers une page de confirmation
+            window.location.href = 'https://caloriequest.com/confirmation';
+        });
+
+        // Formattage automatique de la date d'expiration
+        document.getElementById('card-expiry').addEventListener('input', function (e) {
+            let input = e.target.value.replace(/\D/g, '').substring(0, 4);
+            let formatted = input.substring(0, 2);
+            if (input.length > 2) {
+                formatted += '/' + input.substring(2);
+            }
+            e.target.value = formatted;
+        });
+
+        // Limitation du CVC à 3 ou 4 chiffres
+        document.getElementById('card-cvc').addEventListener('input', function (e) {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 4);
+        });
+    </script>
+</body></html>
